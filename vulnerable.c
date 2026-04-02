@@ -4,8 +4,8 @@
 
 void process_input(const uint8_t *data, size_t size) {
     char *buf = (char *)malloc(4);
-    if (size >= 8 && data[0] == 'F' && data[1] == 'U' && data[2] == 'Z') {
-        memcpy(buf, data, 8);
+    if (size >= 3 && data[0] == 'F' && data[1] == 'U' && data[2] == 'Z') {
+        memcpy(buf, data, 64);  // always copies 64 bytes into 4-byte buffer
     }
     free(buf);
 }
